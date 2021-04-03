@@ -1,6 +1,6 @@
 import pytest
 
-from page_objects.sign_in import SignInPage
+from page_objects.sign_in_page import SignInPage
 
 link = "https://dev.lk.tr-line.ru/sign-in"
 
@@ -34,6 +34,9 @@ testdata_incorrect_phone_number = [
 
 @pytest.mark.parametrize("login, password", testdata_correct)
 def test_auth_correct_data(page, login, password):
+    """
+    Тест-кейс 2.1, 2.2
+    """
     sign_in_page = SignInPage(page, link)
     sign_in_page.open()
     sign_in_page.fill_login(login)
@@ -44,6 +47,9 @@ def test_auth_correct_data(page, login, password):
 
 @pytest.mark.parametrize("login, password", testdata_incorrect)
 def test_auth_incorrect_data(page, login, password):
+    """
+    Тест-кейс 2.3 - 2.7
+    """
     sign_in_page = SignInPage(page, link)
     sign_in_page.open()
     sign_in_page.fill_login(login)
@@ -54,6 +60,9 @@ def test_auth_incorrect_data(page, login, password):
 
 @pytest.mark.parametrize("login", testdata_phone_number)
 def test_auth_by_phone_number(page, login):
+    """
+    Тест-кейс 2.8
+    """
     sign_in_page = SignInPage(page, link)
     sign_in_page.open()
     sign_in_page.fill_login(login)
@@ -62,6 +71,9 @@ def test_auth_by_phone_number(page, login):
 
 @pytest.mark.parametrize("login", testdata_incorrect_phone_number)
 def test_sign_in_by_sms_button_invisible(page, login):
+    """
+    Тест-кейс 2.9
+    """
     sign_in_page = SignInPage(page, link)
     sign_in_page.open()
     sign_in_page.fill_login(login)

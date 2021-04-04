@@ -24,12 +24,12 @@ class SignInPage:
 
     def assert_login_unsuccessful(self):
         popup_message = self.page.inner_text('div[role="status"] div div', timeout=3000)
-        assert popup_message == "Неудачная попытка авторизоваться", 'There is no popup-message'
+        assert popup_message == "Неудачная попытка авторизоваться", 'There is no popup-message "Неудачная попытка авторизоваться"'
 
     def assert_sign_in_by_sms_button_visible(self):
         visible = self.page.is_visible("text='Войти по SMS'")
-        assert visible, 'There is no new button'
+        assert visible, 'There is no new button "Войти по SMS"'
 
     def assert_sign_in_by_sms_button_invisible(self):
         visible = self.page.is_visible("text='Войти по SMS'")
-        assert not visible, 'There is wrong button'
+        assert not visible, 'There is wrong button "Войти по SMS"'

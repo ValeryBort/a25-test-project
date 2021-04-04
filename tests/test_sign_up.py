@@ -67,3 +67,5 @@ def test_sign_up_with_empty_fname_lname(page):
     sign_up.click_sign_up_button()
     sign_up.assert_error_message_set_last_name()
     sign_up.assert_error_message_set_first_name()
+
+    

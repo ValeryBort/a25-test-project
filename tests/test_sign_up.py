@@ -67,26 +67,3 @@ def test_sign_up_with_empty_fname_lname(page):
     sign_up.click_sign_up_button()
     sign_up.assert_error_message_set_last_name()
     sign_up.assert_error_message_set_first_name()
-
-
-# @pytest.mark.parametrize("lname, fname", testdata_lname_fname)
-# def test_sign_up_with_spec_char_instead_of_fname_lname(page, lname, fname):
-#     """
-#     Тест-кейс 1.7, 1.8
-#     """
-#     sign_up = SignUpPage(page, link)
-#     sign_up.open()
-#     sign_up.fill_email("1234567890@ya.ru")
-#     sign_up.fill_phone_number("+70876543219")
-#     sign_up.click_next_button()
-#     sign_up.fill_last_name(lname)
-#     sign_up.fill_first_name(fname)
-#     sign_up.assert_error_message_set_last_name()
-
-
-
-
-
-
-
-

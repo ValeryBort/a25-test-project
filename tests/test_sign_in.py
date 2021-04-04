@@ -27,6 +27,7 @@ testdata_phone_number = [
 ]
 
 testdata_incorrect_phone_number = [
+    'телефон',
     '@',
     '.',
 ]
